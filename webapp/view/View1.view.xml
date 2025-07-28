@@ -1,0 +1,135 @@
+<mvc:View xmlns:fb="sap.ui.comp.filterbar" xmlns:f="sap.f" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" 
+controllerName="zproductslocal.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+    <f:DynamicPage >
+        <f:title>
+            <f:DynamicPageTitle >
+                <f:heading>
+                    <Title text="Product Management"></Title>
+                </f:heading>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:header>
+            <f:DynamicPageHeader >
+                <f:content>
+                    <fb:FilterBar search="onPressSearch" >
+                        <fb:filterGroupItems>
+                            <fb:FilterGroupItem name="Product ID" label="Product ID" groupName="Group1" visibleInFilterBar="true">
+                                <fb:control>
+                                    <Input id="idprdid" required="true" showValueHelp="true" valueHelpRequest="onPrdIdVH" ></Input>
+                                </fb:control>
+                            </fb:FilterGroupItem>
+                            <fb:FilterGroupItem name="Product Name" label="Product Name" groupName="Group1" visibleInFilterBar="true">
+                                <fb:control>
+                                    <Input id="idprdname" showValueHelp="true" valueHelpRequest="onPrdNameVH" ></Input>
+                                </fb:control>
+                            </fb:FilterGroupItem>
+                            <fb:FilterGroupItem name="Product Price" label="Product Price" groupName="Group1" >
+                                <fb:control>
+                                    <Input id="idprdprice"></Input>
+                                </fb:control>
+                            </fb:FilterGroupItem>
+                            <fb:FilterGroupItem name="Product Status" label="Product Status" groupName="Group1" visibleInFilterBar="true">
+                                <fb:control>
+                                    <ComboBox id="idstatus" items="{/aProducts}">
+                                        <core:Item text="{prdstatus}"></core:Item>
+                                    </ComboBox>
+                                </fb:control>
+                            </fb:FilterGroupItem>
+                        </fb:filterGroupItems>
+                    </fb:FilterBar>
+                </f:content>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            <Table id="idProductsTable" headerText="Products Details" items="{/aProducts}">
+                <columns>
+                    <Column>
+                        <Text text="Product ID"></Text>
+                    </Column>
+                    <Column>
+                        <Text text="Product Name"></Text>
+                    </Column>
+                    <Column>
+                        <Text text="Product Price"></Text>
+                    </Column>
+                    <Column>
+                        <Text text="Product Status"></Text>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem >
+                        <cells>
+                            <Input value="{prdid}" />
+                            <Input value="{prdname}"/>
+                            <Input value="{prdprice}" />
+                            <Input value="{prdstatus}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </f:content>
+    </f:DynamicPage>
+
+    <!-- <Page id="page" title="{i18n>title}">
+        <content>
+            <form:SimpleForm editable="true" labelSpanXL="4" labelSpanL="4" labelSpanM="2" labelSpanS="12"
+                emptySpanXL="4" emptySpanL="0" emptySpanM="0" emptySpanS="0">
+                <form:content>
+                    <Label text="Product ID" design="Bold"></Label>
+                    <Input id="idprdid" required="true"></Input>
+                    <Label text="Product Name" design="Bold"></Label>
+                    <Input id="idprdname"  ></Input>
+                    <Label text="Product Price" design="Bold"></Label>
+                    <Input id="idprdprice" ></Input>
+                    <Label text="Status" design="Bold"></Label>
+                    <ComboBox id="idstatus" items="{/aProducts}">
+                        <core:Item text="{prdstatus}"></core:Item>
+                    </ComboBox>
+                    <Button text="Search" type="Emphasized" press="onPressSearch"></Button>
+                    <Button text="Sort" press="onPressSort"></Button>
+                </form:content>
+            </form:SimpleForm>
+
+            <Table id="idProductsTable" headerText="Products Details" items="{/aProducts}">
+                <columns>
+                    <Column>
+                        <Text text="Product ID"></Text>
+                    </Column>
+                    <Column>
+                        <Text text="Product Name"></Text>
+                    </Column>
+                    <Column>
+                        <Text text="Product Price"></Text>
+                    </Column>
+                    <Column>
+                        <Text text="Product Status"></Text>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem >
+                        <cells>
+                            <Input value="{prdid}" />
+                            <Input value="{prdname}"/>
+                            <Input value="{prdprice}" />
+                            <Input value="{prdstatus}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+        <footer>
+            <Bar >
+                <contentLeft>
+                    <Button text="Left"></Button>
+                </contentLeft>
+                <contentMiddle>
+                    <Button text="Middle"></Button>
+                </contentMiddle>
+                <contentRight>
+                    <Button text="Validate" type="Emphasized" press="onPressValidate"></Button>
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page> -->
+</mvc:View>

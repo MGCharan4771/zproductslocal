@@ -1,0 +1,64 @@
+{
+    "aProducts": [
+        {
+          "prdid": "PRD001",
+          "prdname": "Laptop",
+          "prdprice": 65000,
+          "prdstatus": "Available"
+        },
+        {
+          "prdid": "PRD002",
+          "prdname": "Smartphone",
+          "prdprice": 32000,
+          "prdstatus": "Not Available"
+        },
+        {
+          "prdid": "PRD003",
+          "prdname": "Tablet",
+          "prdprice": 21000,
+          "prdstatus": "Available"
+        },
+        {
+          "prdid": "PRD004",
+          "prdname": "Monitor",
+          "prdprice": 15000,
+          "prdstatus": "Not Available"
+        },
+        {
+          "prdid": "PRD005",
+          "prdname": "Keyboard",
+          "prdprice": 1200,
+          "prdstatus": "Available"
+        },
+        {
+          "prdid": "PRD006",
+          "prdname": "Mouse",
+          "prdprice": 800,
+          "prdstatus": "Out of Stock"
+        },
+        {
+          "prdid": "PRD007",
+          "prdname": "Smartwatch",
+          "prdprice": 9500,
+          "prdstatus": "Available"
+        },
+        {
+          "prdid": "PRD008",
+          "prdname": "Printer",
+          "prdprice": 8700,
+          "prdstatus": "Available"
+        },
+        {
+          "prdid": "PRD009",
+          "prdname": "Router",
+          "prdprice": 2300,
+          "prdstatus": "Out of Stock"
+        },
+        {
+          "prdid": "PRD010",
+          "prdname": "Headphones",
+          "prdprice": 3200,
+          "prdstatus": "Available"
+        }
+      ]    
+}
