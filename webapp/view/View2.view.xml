@@ -1,0 +1,5 @@
+<mvc:View controllerName="zproductslocal.controller.View2" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+    <Page title="Welcome to Second View">
+
+    </Page>
+</mvc:View>

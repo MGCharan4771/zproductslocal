@@ -48,7 +48,7 @@ sap.ui.define([
                 MessageToast.show("ID Number Validated");
             } else {
                 this.getView().byId("idNumber").setValueState("Error")
-                this.getView().byId("idNumber").setValueStateText("ID Number is Empty")
+                this.getView().byId("idNumber").setValueStateText("ID Number is Empty it is Mandatory ")
                 MessageToast.show("ID Number is Empty");
             }
         },
@@ -79,12 +79,51 @@ sap.ui.define([
             let table = this.getView().byId("idProductsTable");
             table.getBinding("items").sort(prdidsort)
         },
-        onPressRow: function(oEvent){
+        onPressRow: function (oEvent) {
             var selectedObj = oEvent.getSource().getBindingContext().getObject();
             var prdid = selectedObj.prdid
             this.getView().byId("idprdid").setValue(prdid);
             // this.onPressPrdidClose();
             this.PrdIdDialog.close();
+        },
+        formatPrdstatus: function (prdstatus) {
+            if (prdstatus == 'Available') {
+                return 'Success';
+            } else if (prdstatus == 'Not Available') {
+                return 'Error'
+            } else if (prdstatus == 'Out of Stock') {
+                return 'Information'
+            } else {
+                return 'Warning'
+            }
+        },
+        formatPrice: function (price) {
+            let formattedValue = price.toFixed(2)
+            return formattedValue;
+        },
+        onPressNavView2: function () {
+            var oRouter = this.getOwnerComponent().getRouter();
+            oRouter.navTo("RouteView2");
+        },
+        onPressAdd: function () {
+            let ProductsModel = this.getView().getModel();
+            let productsData = ProductsModel.getData().aProducts;
+            let obj = {
+                "prdid": "",
+                "prdname": "",
+                "prdprice": "",
+                "prdstatus": ""
+            };
+            productsData.push(obj);
+            ProductsModel.updateBindings(true);
+        },
+        onPressDelete: function (oEvent) {
+            let ProductsModel = this.getView().getModel();
+            let productsData = ProductsModel.getData().aProducts;
+            let sPath = oEvent.getSource().getBindingContext().sPath.split('/')[2];
+            let index = Number(sPath);
+            productsData.splice(index, 1);
+            ProductsModel.updateBindings(true);
         }
     });
 });

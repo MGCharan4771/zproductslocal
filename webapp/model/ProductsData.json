@@ -33,7 +33,7 @@
         {
           "prdid": "PRD006",
           "prdname": "Mouse",
-          "prdprice": 800,
+          "prdprice": 80000,
           "prdstatus": "Out of Stock"
         },
         {
@@ -46,7 +46,7 @@
           "prdid": "PRD008",
           "prdname": "Printer",
           "prdprice": 8700,
-          "prdstatus": "Available"
+          "prdstatus": "Shipping"
         },
         {
           "prdid": "PRD009",

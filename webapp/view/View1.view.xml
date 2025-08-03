@@ -42,7 +42,15 @@ controllerName="zproductslocal.controller.View1"
             </f:DynamicPageHeader>
         </f:header>
         <f:content>
-            <Table id="idProductsTable" headerText="Products Details" items="{/aProducts}">
+            <Table id="idProductsTable" items="{/aProducts}">
+                <headerToolbar>
+                    <OverflowToolbar >
+                        <Title text="Products Details"></Title>
+                        <ToolbarSpacer ></ToolbarSpacer>
+                        <Button text="Add" icon="sap-icon://add" iconFirst="false" type="Emphasized" press="onPressAdd"></Button>
+                        <Button text="Nav to View2" type="Emphasized" press="onPressNavView2"></Button>
+                    </OverflowToolbar>
+                </headerToolbar>
                 <columns>
                     <Column>
                         <Text text="Product ID"></Text>
@@ -56,6 +64,9 @@ controllerName="zproductslocal.controller.View1"
                     <Column>
                         <Text text="Product Status"></Text>
                     </Column>
+                    <Column width="5%">
+                        <Text text="Delete"></Text>
+                    </Column>
                 </columns>
                 <items>
                     <ColumnListItem >
@@ -64,6 +75,13 @@ controllerName="zproductslocal.controller.View1"
                             <Input value="{prdname}"/>
                             <Input value="{prdprice}" />
                             <Input value="{prdstatus}"/>
+                            <Button icon="sap-icon://delete" type="Reject" press="onPressDelete"></Button>
+                            <!-- <Text text="{prdid}" />
+                            <ObjectStatus text="{prdname}" 
+                                state="{=${prdprice} > 15000 ? 'Error' : 'Information'}" />
+                            <Text text="{path: 'prdprice', formatter : '.formatPrice'}" />
+                            <ObjectStatus text="{prdstatus}" 
+                                state="{path:'prdstatus', formatter: '.formatPrdstatus'}"/> -->
                         </cells>
                     </ColumnListItem>
                 </items>
